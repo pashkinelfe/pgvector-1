@@ -4,7 +4,6 @@
 #define __STDC_WANT_IEC_60559_TYPES_EXT__
 
 #include <float.h>
-#include <arm_sve.h>
 
 /* We use two types of dispatching: intrinsics and target_clones */
 /* TODO Move to better place */
@@ -26,6 +25,7 @@
 
 #if defined(__ARM_FEATURE_SVE) || defined(__ARM_FEATURE_SVE2)
 #define ARM_SVE
+#include <arm_sve.h>
 #endif
 
 #if defined(USE_DISPATCH)
